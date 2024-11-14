@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App with Themes</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+<body>
+    <div class="container">
+        <div class="stats-container">
+            <div class="details">
+                <h1>Todo List</h1>
+                <p id="statusMessage">Please add tasks</p>
+                <div id="progressBar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="stats-numbers">
+                <p id="numbers">0 / 0</p>
+            </div>
+        </div>
+        
+        <form action="">
+            <label for="taskInput">Task Name</label>
+            <input type="text" id="taskInput" placeholder="Write your task">
+            
+            <label for="reminderInput">Date</label>
+            <input type="datetime-local" id="reminderInput" placeholder="Set reminder time">
+            <!-- Repeat Task Option -->
+            <label for="repeatCheckbox">Repeat Task</label>
+            <input type="checkbox" id="repeatCheckbox">
+
+<!-- Repeat Frequency (only visible when repeat is checked) -->
+<label for="repeatFrequency" style="display: none;">Repeat Every:</label>
+<select id="repeatFrequency" style="display: none;">
+    <option value="daily">Daily</option>
+    <option value="weekly">Weekly</option>
+</select>
+
+            
+            <div class="secret-task">
+                <input type="checkbox" id="secretCheckbox">
+                <label for="secretCheckbox">Secret Task</label>
+                <input type="password" id="taskPassword" placeholder="Set password (if secret)">
+            </div>
+        
+            <button id="newTask" type="submit">+</button>
+        </form>
+        
+
+        <ul id="task-list" class="task-list"></ul>
+
+        <div class="theme-selector">
+            <label for="themeSelect">Choose Theme:</label>
+            <select id="themeSelect">
+                <option value="default">Default</option>
+                <option value="dark">Dark Mode</option>
+                <option value="light">Light Mode</option>
+                <option value="gradient">Gradient Mode</option>
+                <option value="pink">Pink Mode</option>
+            </select>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</body>
+</html>
